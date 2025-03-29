@@ -100,8 +100,7 @@ public class AdminStudentController {
                             content = @Content(schema = @Schema(implementation = ErrorResponse.class)))
             }
     )
-    public ResponseEntity<List<GetStudentsByCourseResponseDTO>> getStudentsByCourse(@RequestHeader("Authorization") String authorization,
-                                                                                    @RequestParam String courseName) {
+    public ResponseEntity<List<GetStudentsByCourseResponseDTO>> getStudentsByCourse(@RequestParam String courseName) {
         List<GetStudentsByCourseResponseDTO> students = studentService.getStudentsByCourseName(courseName);
         return ResponseEntity.ok(students);
     }

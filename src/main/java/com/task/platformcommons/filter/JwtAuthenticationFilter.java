@@ -40,7 +40,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String username = jwtUtil.extractUsername(token);
         String role = jwtUtil.extractRole(token);
 
-        if(role.equalsIgnoreCase("ADMIN")) {
+        if(role.equalsIgnoreCase("ROLE_ADMIN")) {
+            role = role.substring(5);
 
             if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
                 UserDetails userDetails = userDetailsService.loadUserByUsername(username);

@@ -2,7 +2,7 @@ package com.task.platformcommons.controller.admin;
 
 import com.task.platformcommons.exception.model.ErrorResponse;
 import com.task.platformcommons.model.request.AdminLoginRequest;
-import com.task.platformcommons.service.AdminAuthenticationService;
+import com.task.platformcommons.service.impl.AdminAuthenticationServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class AdminAuthenticationController {
 
-    private final AdminAuthenticationService authService;
+    private final AdminAuthenticationServiceImpl authService;
 
     @PostMapping("/login")
     @Operation(

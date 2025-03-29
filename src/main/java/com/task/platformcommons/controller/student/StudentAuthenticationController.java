@@ -1,10 +1,8 @@
 package com.task.platformcommons.controller.student;
 
 import com.task.platformcommons.exception.model.ErrorResponse;
-import com.task.platformcommons.model.request.AdminLoginRequest;
 import com.task.platformcommons.model.request.StudentLoginRequest;
-import com.task.platformcommons.service.AdminAuthenticationService;
-import com.task.platformcommons.service.StudentAuthenticationService;
+import com.task.platformcommons.service.impl.StudentAuthenticationServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -24,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class StudentAuthenticationController {
 
-    private final StudentAuthenticationService authenticationService;
+    private final StudentAuthenticationServiceImpl authenticationService;
 
     @PostMapping("/login")
     @Operation(

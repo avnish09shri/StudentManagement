@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/students/v1")
 @RequiredArgsConstructor
-@PreAuthorize("hasAuthority('ADMIN')")
+@PreAuthorize("hasAuthority('STUDENT')")
 @Tag(name = "Student Controller", description = "Student Controller for Managing Profile")
 public class StudentController {
 

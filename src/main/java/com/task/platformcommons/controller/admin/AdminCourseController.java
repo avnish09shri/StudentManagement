@@ -4,6 +4,7 @@ import com.task.platformcommons.exception.model.ErrorResponse;
 import com.task.platformcommons.model.request.AddCourseRequestDTO;
 import com.task.platformcommons.model.response.CourseReponseDTO;
 import com.task.platformcommons.service.CourseService;
+import com.task.platformcommons.service.impl.CourseServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -37,8 +38,7 @@ public class AdminCourseController {
                             content = @Content(schema = @Schema(implementation = ErrorResponse.class)))
             }
     )
-    public ResponseEntity<CourseReponseDTO> addCourse(@RequestHeader("Authorization") String authorization,
-                                                      @RequestBody AddCourseRequestDTO request) {
+    public ResponseEntity<CourseReponseDTO> addCourse(@RequestBody AddCourseRequestDTO request) {
         return ResponseEntity.ok(courseService.addCourse(request));
     }
 }

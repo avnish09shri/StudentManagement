@@ -1,10 +1,9 @@
 package com.task.platformcommons.controller.student;
 
 import com.task.platformcommons.exception.model.ErrorResponse;
-import com.task.platformcommons.model.request.UpdateStudentProfileRequestDTO;
 import com.task.platformcommons.model.response.SearchCourseDTO;
 import com.task.platformcommons.service.CourseService;
-import com.task.platformcommons.service.StudentService;
+import com.task.platformcommons.service.impl.CourseServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -20,7 +19,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/students/v1")
 @RequiredArgsConstructor
-@PreAuthorize("hasAuthority('ADMIN')")
+@PreAuthorize("hasAuthority('STUDENT')")
 @Tag(name = "Student Controller", description = "Student Controller for Courses")
 public class CourseController {
 
