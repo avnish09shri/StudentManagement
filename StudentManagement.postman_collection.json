@@ -1,0 +1,1295 @@
+{
+	"info": {
+		"_postman_id": "012f4044-032a-43c4-a92c-34594e160899",
+		"name": "StudentManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17575173"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "students",
+					"item": [
+						{
+							"name": "v1",
+							"item": [
+								{
+									"name": "update-profile",
+									"item": [
+										{
+											"name": "Update Student's Profile",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9TVFVERU5UIiwic3ViIjoiMTAwMDAiLCJpYXQiOjE3NDMyNjUxNDUsImV4cCI6MTc0MzI2ODc0NX0.Vdo7JWqs7ikfhlTALmezucxg0U4SykXPlB400PXV1lI",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"studentCode\": \"10000\",\n  \"email\": \"john.doe@yahoo.com\",\n  \"mobileNumber\": \"+1-555-123-4567\",\n  \"fatherName\": \"Michael Doe\",\n  \"motherName\": \"Sarah Doe\",\n  \"addresses\": [\n    {\n      \"type\": \"Permanent\",\n      \"street\": \"123 Maple Street\",\n      \"city\": \"New York\",\n      \"state\": \"NY\",\n      \"zipCode\": \"10001\"\n    },\n    {\n      \"type\": \"Correspondence\",\n      \"street\": \"456 University Road\",\n      \"city\": \"Boston\",\n      \"state\": \"MA\",\n      \"zipCode\": \"02115\"\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/students/v1/update-profile",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"students",
+														"v1",
+														"update-profile"
+													]
+												},
+												"description": "Update Student's Profile"
+											},
+											"response": [
+												{
+													"name": "200",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"studentCode\": \"10000\",\n  \"email\": \"john.doe@example.com\",\n  \"mobileNumber\": \"+1-555-123-4567\",\n  \"fatherName\": \"Michael Doe\",\n  \"motherName\": \"Sarah Doe\",\n  \"addresses\": [\n    {\n      \"type\": \"Permanent\",\n      \"street\": \"123 Maple Street\",\n      \"city\": \"New York\",\n      \"state\": \"NY\",\n      \"zipCode\": \"10001\"\n    },\n    {\n      \"type\": \"Correspondence\",\n      \"street\": \"456 University Road\",\n      \"city\": \"Boston\",\n      \"state\": \"MA\",\n      \"zipCode\": \"02115\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/students/v1/update-profile",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"students",
+																"v1",
+																"update-profile"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "plain",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain;charset=UTF-8"
+														},
+														{
+															"key": "Content-Length",
+															"value": "49"
+														},
+														{
+															"key": "Date",
+															"value": "Sat, 29 Mar 2025 09:43:39 GMT"
+														},
+														{
+															"key": "Keep-Alive",
+															"value": "timeout=60"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														}
+													],
+													"cookie": [],
+													"body": "Student profile updated successfully for John Doe"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "search",
+									"item": [
+										{
+											"name": "Search Course by Topic and Name",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9TVFVERU5UIiwic3ViIjoiMTAwMDAiLCJpYXQiOjE3NDMyNjUxNDUsImV4cCI6MTc0MzI2ODc0NX0.Vdo7JWqs7ikfhlTALmezucxg0U4SykXPlB400PXV1lI",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/students/v1/search?topic=spring boot",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"students",
+														"v1",
+														"search"
+													],
+													"query": [
+														{
+															"key": "topic",
+															"value": "spring boot"
+														}
+													]
+												},
+												"description": "Search Course by Topic and Name"
+											},
+											"response": [
+												{
+													"name": "200 by course name",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/students/v1/search?courseName=Java Programming",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"students",
+																"v1",
+																"search"
+															],
+															"query": [
+																{
+																	"key": "courseName",
+																	"value": "Java Programming"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "Transfer-Encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "Date",
+															"value": "Sat, 29 Mar 2025 09:46:38 GMT"
+														},
+														{
+															"key": "Keep-Alive",
+															"value": "timeout=60"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														}
+													],
+													"cookie": [],
+													"body": "[\n    {\n        \"courseName\": \"Java Programming\",\n        \"description\": \"A comprehensive course on Java programming covering basics to advanced topics.\",\n        \"courseType\": \"Online\",\n        \"duration\": 12,\n        \"topics\": [\n            \"Introduction to Java\",\n            \"OOP Concepts\",\n            \"Collections Framework\",\n            \"Multithreading\",\n            \"Spring Boot\"\n        ]\n    }\n]"
+												},
+												{
+													"name": "200 by topic name",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/students/v1/search?topic=spring boot",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"students",
+																"v1",
+																"search"
+															],
+															"query": [
+																{
+																	"key": "topic",
+																	"value": "spring boot"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "Transfer-Encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "Date",
+															"value": "Sat, 29 Mar 2025 09:48:40 GMT"
+														},
+														{
+															"key": "Keep-Alive",
+															"value": "timeout=60"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														}
+													],
+													"cookie": [],
+													"body": "[\n    {\n        \"courseName\": \"Java Programming\",\n        \"description\": \"A comprehensive course on Java programming covering basics to advanced topics.\",\n        \"courseType\": \"Online\",\n        \"duration\": 12,\n        \"topics\": [\n            \"Introduction to Java\",\n            \"OOP Concepts\",\n            \"Collections Framework\",\n            \"Multithreading\",\n            \"Spring Boot\"\n        ]\n    }\n]"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "leave",
+									"item": [
+										{
+											"name": "Leave a Course",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9TVFVERU5UIiwic3ViIjoiMTAwMDAiLCJpYXQiOjE3NDMyNjUxNDUsImV4cCI6MTc0MzI2ODc0NX0.Vdo7JWqs7ikfhlTALmezucxg0U4SykXPlB400PXV1lI",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/students/v1/leave?studentCode=10000&courseName=Java Basics",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"students",
+														"v1",
+														"leave"
+													],
+													"query": [
+														{
+															"key": "studentCode",
+															"value": "10000",
+															"description": "(Required) "
+														},
+														{
+															"key": "courseName",
+															"value": "Java Basics",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Leave a Course"
+											},
+											"response": [
+												{
+													"name": "200",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/students/v1/leave?studentCode=10000&courseName=Java Programming",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"students",
+																"v1",
+																"leave"
+															],
+															"query": [
+																{
+																	"key": "studentCode",
+																	"value": "10000",
+																	"description": "(Required) "
+																},
+																{
+																	"key": "courseName",
+																	"value": "Java Programming",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "plain",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "text/plain;charset=UTF-8"
+														},
+														{
+															"key": "Content-Length",
+															"value": "46"
+														},
+														{
+															"key": "Date",
+															"value": "Sat, 29 Mar 2025 10:01:49 GMT"
+														},
+														{
+															"key": "Keep-Alive",
+															"value": "timeout=60"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														}
+													],
+													"cookie": [],
+													"body": "Successfully left the course: Java Programming"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "Login",
+									"item": [
+										{
+											"name": "Login",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"studentCode\": \"10000\",\r\n  \"dateOfBirth\": \"1995-06-15\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/auth/student/login",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"auth",
+														"student",
+														"login"
+													]
+												},
+												"description": "Generated from cURL: curl -X 'POST' \\\r\n  'http://localhost:8080/student-management/api/auth/student/login' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"studentCode\": \"10000\",\r\n  \"dateOfBirth\": \"1995-06-15\"\r\n}'"
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "admin",
+					"item": [
+						{
+							"name": "v1",
+							"item": [
+								{
+									"name": "students",
+									"item": [
+										{
+											"name": "assign-courses",
+											"item": [
+												{
+													"name": "Assign Courses to Students",
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9BRE1JTiIsInN1YiI6ImFkbWluIiwiaWF0IjoxNzQzMjY0OTA1LCJleHAiOjE3NDMyNjg1MDV9.XdlcKsJGCDYa6I5xCdUCaXCbxzNTPkodZkM1EldzlHc",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"studentCode\": \"10000\",\n  \"courseIds\": [\n    1\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/admin/v1/students/assign-courses",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"admin",
+																"v1",
+																"students",
+																"assign-courses"
+															]
+														},
+														"description": "Assign Courses to Students"
+													},
+													"response": [
+														{
+															"name": "200",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"studentCode\": \"10000\",\n  \"courseIds\": [\n    5\n  ]\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/admin/v1/students/assign-courses",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"admin",
+																		"v1",
+																		"students",
+																		"assign-courses"
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "plain",
+															"header": [
+																{
+																	"key": "Vary",
+																	"value": "Origin"
+																},
+																{
+																	"key": "Vary",
+																	"value": "Access-Control-Request-Method"
+																},
+																{
+																	"key": "Vary",
+																	"value": "Access-Control-Request-Headers"
+																},
+																{
+																	"key": "X-Content-Type-Options",
+																	"value": "nosniff"
+																},
+																{
+																	"key": "X-XSS-Protection",
+																	"value": "0"
+																},
+																{
+																	"key": "Cache-Control",
+																	"value": "no-cache, no-store, max-age=0, must-revalidate"
+																},
+																{
+																	"key": "Pragma",
+																	"value": "no-cache"
+																},
+																{
+																	"key": "Expires",
+																	"value": "0"
+																},
+																{
+																	"key": "X-Frame-Options",
+																	"value": "DENY"
+																},
+																{
+																	"key": "Content-Type",
+																	"value": "text/plain;charset=UTF-8"
+																},
+																{
+																	"key": "Content-Length",
+																	"value": "49"
+																},
+																{
+																	"key": "Date",
+																	"value": "Sat, 29 Mar 2025 13:34:36 GMT"
+																},
+																{
+																	"key": "Keep-Alive",
+																	"value": "timeout=60"
+																},
+																{
+																	"key": "Connection",
+																	"value": "keep-alive"
+																}
+															],
+															"cookie": [],
+															"body": "Courses assigned successfully to student John Doe"
+														}
+													]
+												}
+											]
+										},
+										{
+											"name": "course",
+											"item": [
+												{
+													"name": "Get Students assigned to Course Name",
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9BRE1JTiIsInN1YiI6ImFkbWluIiwiaWF0IjoxNzQzMjY0OTA1LCJleHAiOjE3NDMyNjg1MDV9.XdlcKsJGCDYa6I5xCdUCaXCbxzNTPkodZkM1EldzlHc",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/admin/v1/students/course?courseName=Java Basics",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"admin",
+																"v1",
+																"students",
+																"course"
+															],
+															"query": [
+																{
+																	"key": "courseName",
+																	"value": "Java Basics",
+																	"description": "(Required) "
+																}
+															]
+														},
+														"description": "Get Students assigned to Course Name"
+													},
+													"response": [
+														{
+															"name": "200",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/admin/v1/students/course?courseName=Java Basics",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"admin",
+																		"v1",
+																		"students",
+																		"course"
+																	],
+																	"query": [
+																		{
+																			"key": "courseName",
+																			"value": "Java Basics",
+																			"description": "(Required) "
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Vary",
+																	"value": "Origin"
+																},
+																{
+																	"key": "Vary",
+																	"value": "Access-Control-Request-Method"
+																},
+																{
+																	"key": "Vary",
+																	"value": "Access-Control-Request-Headers"
+																},
+																{
+																	"key": "X-Content-Type-Options",
+																	"value": "nosniff"
+																},
+																{
+																	"key": "X-XSS-Protection",
+																	"value": "0"
+																},
+																{
+																	"key": "Cache-Control",
+																	"value": "no-cache, no-store, max-age=0, must-revalidate"
+																},
+																{
+																	"key": "Pragma",
+																	"value": "no-cache"
+																},
+																{
+																	"key": "Expires",
+																	"value": "0"
+																},
+																{
+																	"key": "X-Frame-Options",
+																	"value": "DENY"
+																},
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																},
+																{
+																	"key": "Transfer-Encoding",
+																	"value": "chunked"
+																},
+																{
+																	"key": "Date",
+																	"value": "Sat, 29 Mar 2025 13:35:11 GMT"
+																},
+																{
+																	"key": "Keep-Alive",
+																	"value": "timeout=60"
+																},
+																{
+																	"key": "Connection",
+																	"value": "keep-alive"
+																}
+															],
+															"cookie": [],
+															"body": "[\n    {\n        \"studentCode\": \"10000\",\n        \"name\": \"John Doe\",\n        \"dateOfBirth\": \"1995-06-15\",\n        \"gender\": \"Male\",\n        \"addresses\": [\n            {\n                \"type\": \"Permanent\",\n                \"street\": \"123 Main St\",\n                \"city\": \"New York\",\n                \"state\": \"NY\",\n                \"zipCode\": \"10001\"\n            },\n            {\n                \"type\": \"Current\",\n                \"street\": \"456 Office Park\",\n                \"city\": \"Los Angeles\",\n                \"state\": \"CA\",\n                \"zipCode\": \"90001\"\n            }\n        ]\n    }\n]"
+														}
+													]
+												}
+											]
+										},
+										{
+											"name": "Get Students",
+											"item": [
+												{
+													"name": "Get Students By Name",
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9BRE1JTiIsInN1YiI6ImFkbWluIiwiaWF0IjoxNzQzMjY0OTA1LCJleHAiOjE3NDMyNjg1MDV9.XdlcKsJGCDYa6I5xCdUCaXCbxzNTPkodZkM1EldzlHc",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/admin/v1/students?name=John",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"admin",
+																"v1",
+																"students"
+															],
+															"query": [
+																{
+																	"key": "name",
+																	"value": "John",
+																	"description": "(Required) "
+																}
+															]
+														},
+														"description": "Get Students By Name"
+													},
+													"response": [
+														{
+															"name": "200",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/admin/v1/students?name=John",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"admin",
+																		"v1",
+																		"students"
+																	],
+																	"query": [
+																		{
+																			"key": "name",
+																			"value": "John",
+																			"description": "(Required) "
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Vary",
+																	"value": "Origin"
+																},
+																{
+																	"key": "Vary",
+																	"value": "Access-Control-Request-Method"
+																},
+																{
+																	"key": "Vary",
+																	"value": "Access-Control-Request-Headers"
+																},
+																{
+																	"key": "X-Content-Type-Options",
+																	"value": "nosniff"
+																},
+																{
+																	"key": "X-XSS-Protection",
+																	"value": "0"
+																},
+																{
+																	"key": "Cache-Control",
+																	"value": "no-cache, no-store, max-age=0, must-revalidate"
+																},
+																{
+																	"key": "Pragma",
+																	"value": "no-cache"
+																},
+																{
+																	"key": "Expires",
+																	"value": "0"
+																},
+																{
+																	"key": "X-Frame-Options",
+																	"value": "DENY"
+																},
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																},
+																{
+																	"key": "Transfer-Encoding",
+																	"value": "chunked"
+																},
+																{
+																	"key": "Date",
+																	"value": "Sat, 29 Mar 2025 13:34:01 GMT"
+																},
+																{
+																	"key": "Keep-Alive",
+																	"value": "timeout=60"
+																},
+																{
+																	"key": "Connection",
+																	"value": "keep-alive"
+																}
+															],
+															"cookie": [],
+															"body": "[\n    {\n        \"studentCode\": \"10000\",\n        \"name\": \"John Doe\",\n        \"dateOfBirth\": \"1995-06-15\",\n        \"gender\": \"Male\",\n        \"addresses\": [\n            {\n                \"id\": 33,\n                \"type\": \"Permanent\",\n                \"street\": \"123 Main St\",\n                \"city\": \"New York\",\n                \"state\": \"NY\",\n                \"zipCode\": \"10001\"\n            },\n            {\n                \"id\": 34,\n                \"type\": \"Current\",\n                \"street\": \"456 Office Park\",\n                \"city\": \"Los Angeles\",\n                \"state\": \"CA\",\n                \"zipCode\": \"90001\"\n            }\n        ]\n    }\n]"
+														}
+													]
+												}
+											]
+										},
+										{
+											"name": "Students",
+											"item": [
+												{
+													"name": "Add New Student",
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9BRE1JTiIsInN1YiI6ImFkbWluIiwiaWF0IjoxNzQzMjY1MzM0LCJleHAiOjE3NDMyNjg5MzR9.aRgYT50YnRlA-OfEsnBfWipYd8Bc6XdyJe9JT4gtuFE",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"name\": \"John Smith\",\n  \"dateOfBirth\": \"1995-06-15\",\n  \"gender\": \"Male\",\n  \"addresses\": [\n    {\n      \"type\": \"Permanent\",\n      \"street\": \"123 Main St\",\n      \"city\": \"New York\",\n      \"state\": \"NY\",\n      \"zipCode\": \"10001\"\n    },\n    {\n      \"type\": \"Current\",\n      \"street\": \"456 Office Park\",\n      \"city\": \"Los Angeles\",\n      \"state\": \"CA\",\n      \"zipCode\": \"90001\"\n    }\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/admin/v1/students",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"admin",
+																"v1",
+																"students"
+															]
+														},
+														"description": "Add a New Student"
+													},
+													"response": [
+														{
+															"name": "200",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "*/*"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"name\": \"John Doe\",\n  \"dateOfBirth\": \"1995-06-15\",\n  \"gender\": \"Male\",\n  \"addresses\": [\n    {\n      \"type\": \"Permanent\",\n      \"street\": \"123 Main St\",\n      \"city\": \"New York\",\n      \"state\": \"NY\",\n      \"zipCode\": \"10001\"\n    },\n    {\n      \"type\": \"Current\",\n      \"street\": \"456 Office Park\",\n      \"city\": \"Los Angeles\",\n      \"state\": \"CA\",\n      \"zipCode\": \"90001\"\n    }\n  ]\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/admin/v1/students",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"admin",
+																		"v1",
+																		"students"
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Vary",
+																	"value": "Origin"
+																},
+																{
+																	"key": "Vary",
+																	"value": "Access-Control-Request-Method"
+																},
+																{
+																	"key": "Vary",
+																	"value": "Access-Control-Request-Headers"
+																},
+																{
+																	"key": "X-Content-Type-Options",
+																	"value": "nosniff"
+																},
+																{
+																	"key": "X-XSS-Protection",
+																	"value": "0"
+																},
+																{
+																	"key": "Cache-Control",
+																	"value": "no-cache, no-store, max-age=0, must-revalidate"
+																},
+																{
+																	"key": "Pragma",
+																	"value": "no-cache"
+																},
+																{
+																	"key": "Expires",
+																	"value": "0"
+																},
+																{
+																	"key": "X-Frame-Options",
+																	"value": "DENY"
+																},
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																},
+																{
+																	"key": "Transfer-Encoding",
+																	"value": "chunked"
+																},
+																{
+																	"key": "Date",
+																	"value": "Sat, 29 Mar 2025 13:32:41 GMT"
+																},
+																{
+																	"key": "Keep-Alive",
+																	"value": "timeout=60"
+																},
+																{
+																	"key": "Connection",
+																	"value": "keep-alive"
+																}
+															],
+															"cookie": [],
+															"body": "{\n    \"studentCode\": \"10000\"\n}"
+														}
+													]
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "courses",
+									"item": [
+										{
+											"name": "Add New Course",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9BRE1JTiIsInN1YiI6ImFkbWluIiwiaWF0IjoxNzQzMjY0OTA1LCJleHAiOjE3NDMyNjg1MDV9.XdlcKsJGCDYa6I5xCdUCaXCbxzNTPkodZkM1EldzlHc",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"Java Basics\",\n  \"description\": \"A comprehensive course on Java programming covering basics to advanced topics.\",\n  \"courseType\": \"Online\",\n  \"duration\": 12,\n  \"topics\": [\n    \"Introduction to Java\",\n    \"OOP Concepts\",\n    \"Collections Framework\",\n    \"Multithreading\",\n    \"Spring Boot\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/admin/v1/courses",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"admin",
+														"v1",
+														"courses"
+													]
+												},
+												"description": "Add a New Course for Students"
+											},
+											"response": [
+												{
+													"name": "200",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"name\": \"Java Basics\",\n  \"description\": \"A comprehensive course on Java programming covering basics to advanced topics.\",\n  \"courseType\": \"Online\",\n  \"duration\": 12,\n  \"topics\": [\n    \"Introduction to Java\",\n    \"OOP Concepts\",\n    \"Collections Framework\",\n    \"Multithreading\",\n    \"Spring Boot\"\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/admin/v1/courses",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"admin",
+																"v1",
+																"courses"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Vary",
+															"value": "Origin"
+														},
+														{
+															"key": "Vary",
+															"value": "Access-Control-Request-Method"
+														},
+														{
+															"key": "Vary",
+															"value": "Access-Control-Request-Headers"
+														},
+														{
+															"key": "X-Content-Type-Options",
+															"value": "nosniff"
+														},
+														{
+															"key": "X-XSS-Protection",
+															"value": "0"
+														},
+														{
+															"key": "Cache-Control",
+															"value": "no-cache, no-store, max-age=0, must-revalidate"
+														},
+														{
+															"key": "Pragma",
+															"value": "no-cache"
+														},
+														{
+															"key": "Expires",
+															"value": "0"
+														},
+														{
+															"key": "X-Frame-Options",
+															"value": "DENY"
+														},
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														},
+														{
+															"key": "Transfer-Encoding",
+															"value": "chunked"
+														},
+														{
+															"key": "Date",
+															"value": "Sat, 29 Mar 2025 13:33:17 GMT"
+														},
+														{
+															"key": "Keep-Alive",
+															"value": "timeout=60"
+														},
+														{
+															"key": "Connection",
+															"value": "keep-alive"
+														}
+													],
+													"cookie": [],
+													"body": "{\n    \"id\": 5,\n    \"name\": \"Java Basics\",\n    \"description\": \"A comprehensive course on Java programming covering basics to advanced topics.\",\n    \"courseType\": \"Online\",\n    \"duration\": 12,\n    \"topics\": [\n        \"Introduction to Java\",\n        \"OOP Concepts\",\n        \"Collections Framework\",\n        \"Multithreading\",\n        \"Spring Boot\"\n    ]\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "Login",
+									"item": [
+										{
+											"name": "Login",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "accept",
+														"value": "*/*"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"admin123\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/auth/admin/login",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"auth",
+														"admin",
+														"login"
+													]
+												},
+												"description": "Generated from cURL: curl -X 'POST' \\\r\n  'http://localhost:8080/student-management/api/auth/login' \\\r\n  -H 'accept: */*' \\\r\n  -H 'Content-Type: application/json' \\\r\n  -d '{\r\n  \"username\": \"admin\",\r\n  \"password\": \"admin123\"\r\n}'"
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080/student-management"
+		}
+	]
+}
