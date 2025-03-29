@@ -6,4 +6,6 @@ I have mentioned swagger Url for better Understanding but I recommend to use Pos
 
 PFA Postman Collection for this application. 
 
+If sometimes leave course will not work, try in debug mode it will work
+
 Please pass token for both admin & student operations without Bearer.
